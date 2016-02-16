@@ -20,13 +20,22 @@
         $input_word = $_GET['word'];
         $input_list = $_GET['list'];
         $my_anagram = new Anagram;
-        $results_match = $my_anagram->getMatchResultArray();
-        $results_fail = $my_anagram->getFailResultArray();
-        var_dump($results_fail);
-        var_dump($results_match);
+
+        // var_dump($my_anagram);
+
         $results_bool = $my_anagram->anagramMatch($input_word, $input_list);
 
-        return $app['twig']->render('anagram.html.twig', array('results' => $results_bool, 'match' => $results_match, 'fail' => $results_fail));
+        $results_match = $my_anagram->getMatchResultArray();
+        $results_fail = $my_anagram->getFailResultArray();
+        // var_dump($results_fail);
+        // var_dump($results_match);
+
+        return $app['twig']->render('anagram.html.twig', array(
+            'input' => $input_word,
+            'list' => $input_list,
+            'results' => $results_bool,
+            'match' => $results_match,
+            'fail' => $results_fail));
     });
 
     return $app;

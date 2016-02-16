@@ -37,16 +37,18 @@
         <!-- Row: 2 -->
           <div class="row">
               <div class="col-sm-6">
-                    <h3>Your Word: {{ results }}</h3>
-                    <h3>Your List of Words: {{ results }}</h3>
-                        <h4>MATCHING WORDS</h4>
-                        {% for result in match %}
-                            <li>{{ result }}</li>
-                        {% endfor %}
+                    <h3>Your Word: {{ input }}</h3>
+                    <h3>Your List of Words:</h3>
+
+                       <h4>MATCHING WORDS</h4>
+                            {% for result in match %}
+                                <li>{{ result }}</li>
+                            {% endfor %}
+
                         <h4>FAILING WORDS</h4>
-                        {% for result in fail %}
-                            <li>{{ result }}</li>
-                        {% endfor %}
+                            {% for result in fail %}
+                                <li>{{ result }}</li>
+                            {% endfor %}
 
 
               </div><!--col-sm-6-->

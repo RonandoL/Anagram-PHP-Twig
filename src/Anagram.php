@@ -1,13 +1,13 @@
 <?php
     class Anagram
     {
-        private $match_result_array = array();
-        private $fail_result_array = array();
+        private $match_result_array;
+        private $fail_result_array;
 
         function __construct()
         {
-            $this->match_result_array;
-            $this->fail_result_array;
+            $this->match_result_array = array();
+            $this->fail_result_array = array();
         }
 
         function getMatchResultArray()
@@ -22,23 +22,23 @@
 
         function pushMatchResultArray($new_element)
         {
-            $this->match_result_array = array_push($this->match_result_array, $new_element);
+            array_push($this->match_result_array, $new_element);
         }
         function pushFailResultArray($new_element)
         {
-            $this->fail_result_array = array_push($this->fail_result_array, $new_element);
+            array_push($this->fail_result_array, $new_element);
         }
 
         function anagramMatch($input_word, $input_list)
         {
             // split word, explode list
+            $this->match_result_array = array();
+            $this->fail_result_array = array();
             $input_word_array = str_split($input_word);
             $input_list_array = explode(" ", $input_list);
                 // arrays of matching and non-matching words
                 // $variable_array = array();
                 // $other_array = array();
-                $this->match_result_array = array();
-                $this->fail_result_array = array();
             // looping through list, splitting each word into array
             foreach ($input_list_array as $word) {
                 $split_list_word = str_split($word);
