@@ -17,13 +17,15 @@
             $input_list_array = str_split($input_list);
             sort($input_word_array);
             sort($input_list_array);
-            $match = true;
+
 
             if ($input_word_array == $input_list_array) {
-                return $match;
+                return true;
+            } else {
+                return false;
             }
 
-            return $match;
+
 
         }
 
