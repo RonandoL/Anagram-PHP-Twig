@@ -11,11 +11,19 @@
         // }
 
     // SAVE, getAll(), deleteAll()
-        function anagramMatch($input_word)
-        {   $input_word_array = str_split($input_word);
-            var_dump($input_word_array);
+        function anagramMatch($input_word, $input_list)
+        {
+            $input_word_array = str_split($input_word);
+            $input_list_array = str_split($input_list);
+            sort($input_word_array);
+            sort($input_list_array);
+            $match = true;
 
-            return $input_word_array;
+            if ($input_word_array == $input_list_array) {
+                return $match;
+            }
+
+            return $match;
 
         }
 
