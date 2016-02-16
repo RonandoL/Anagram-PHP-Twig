@@ -42,7 +42,7 @@
 
             //Arrange
             $test_Anagram = new Anagram;
-            $input = "cat";
+            $input = 'cat';
             $input_list = "tac";
 
             //Act: runs the actual method that we are testing.
@@ -52,7 +52,7 @@
             $this->assertEquals(true, $result);
         }
 
-        // // Two different words
+        // Two different words
         function test_anagramMatch_nonMatch()
         {
 
@@ -66,6 +66,26 @@
 
             //Assert tells our tests what to expect from the output of our method.
             $this->assertEquals(false, $result);
+        }
+
+        // Compare word to multiple word array
+        function test_anagramMatch_multipleWords()
+        {
+
+            //Arrange
+            $test_Anagram = new Anagram;
+            $input = "cat";
+            $input_list = 'cat act tac';
+
+            //Act: runs the actual method that we are testing.
+            $result = $test_Anagram->anagramMatch($input, $input_list);
+            $result2 = $test_Anagram->anagramMatch($input, $input_list);
+            $result3 = $test_Anagram->anagramMatch($input, $input_list);
+
+            //Assert tells our tests what to expect from the output of our method.
+            $this->assertEquals(true, $result);
+            $this->assertEquals(true, $result2);
+            $this->assertEquals(true, $result3);
         }
     }
 

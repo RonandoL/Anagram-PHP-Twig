@@ -13,17 +13,26 @@
     // SAVE, getAll(), deleteAll()
         function anagramMatch($input_word, $input_list)
         {
+            $input_list_word = array();
             $input_word_array = str_split($input_word);
-            $input_list_array = str_split($input_list);
-            sort($input_word_array);
-            sort($input_list_array);
+            $input_list_array = explode(" ", $input_list);
+
+            foreach ($input_list_array as $word) {
+
+                $split_list_word = str_split($word);
+        
+                sort($input_word_array);
+                sort($split_list_word);
 
 
-            if ($input_word_array == $input_list_array) {
-                return true;
-            } else {
-                return false;
+                if ($input_word_array == $split_list_word) {
+                    return true;
+                } else {
+                    return false;
+                }
             }
+
+
 
 
 
