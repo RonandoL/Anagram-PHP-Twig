@@ -39,6 +39,9 @@
               <div class="col-sm-6">
                     <h3>Your Word: {{ input }}</h3>
                     <h3>Your List of Words:</h3>
+                        {% for word in list %}
+                        <li>{{ word }}</li>
+                        {% endfor %}
 
                        <h4>MATCHING WORDS</h4>
                             {% for result in match %}

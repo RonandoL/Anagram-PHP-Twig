@@ -19,6 +19,8 @@
     $app->get("/userInput", function() use ($app) {
         $input_word = $_GET['word'];
         $input_list = $_GET['list'];
+        $input_array = explode(" ", $input_list);
+// var_dump($input_array);
         $my_anagram = new Anagram;
 
         // var_dump($my_anagram);
@@ -32,7 +34,7 @@
 
         return $app['twig']->render('anagram.html.twig', array(
             'input' => $input_word,
-            'list' => $input_list,
+            'list' => $input_array,
             'results' => $results_bool,
             'match' => $results_match,
             'fail' => $results_fail));
