@@ -20,17 +20,12 @@
         $input_word = $_GET['word'];
         $input_list = $_GET['list'];
         $input_array = explode(" ", $input_list);
-// var_dump($input_array);
         $my_anagram = new Anagram;
-
-        // var_dump($my_anagram);
 
         $results_bool = $my_anagram->anagramMatch($input_word, $input_list);
 
-        $results_match = $my_anagram->getMatchResultArray();
+        $results_match = $my_anagram->getMatchResultArray(); // calls the function to get array
         $results_fail = $my_anagram->getFailResultArray();
-        // var_dump($results_fail);
-        // var_dump($results_match);
 
         return $app['twig']->render('anagram.html.twig', array(
             'input' => $input_word,
