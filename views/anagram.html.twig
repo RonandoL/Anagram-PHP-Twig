@@ -3,25 +3,31 @@
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
         <link rel="stylesheet" href="css/styles.css">
-        <title>EXAMPLE</title>
+        <title>Anagram</title>
     </head>
 
         <body>
           <div class='container'>
             <div class='jumbotron'>
-              <h1>EXAMPLE</h1>
-              <p><em>You can't ping without your pong</em></p>
+              <h1>Anagram</h1>
+              <p><em>Match this shit, if you can, for you're the gingerbread ...person.</em></p>
             </div>  <!-- /JUMBOTRON -->
 
         <!-- Row: 1 -->
             <div class='row'>
               <div class='col-sm-6'>
-                  <h2>Enter a number, brah!</h2>
+                  <h2>You even Anagram, brah?</h2>
                   <form action='/userInput'>
                       <div class='form-group'>
-                        <label for='number'>Number</label>
-                        <input id='number' name='number' type='number'>
+                        <label for='word'>Enter one word</label>
+                        <input id='word' name='word' type='text'>
                       </div>
+
+                      <div class='form-group'>
+                        <label for='list'>Enter several words, with only spaces in between</label>
+                        <input id='list' name='list' type='text'>
+                      </div>
+
                       <button class='btn btn-warning' type='submit'>Submit!</button>
                 </form>
             </div>  <!-- /col-sm-6 -->
@@ -31,15 +37,28 @@
         <!-- Row: 2 -->
           <div class="row">
               <div class="col-sm-6">
-                    <ul>
-                        <!-- {% for result in results %}
+                    <h3>Your Word: {{ results }}</h3>
+                    <h3>Your List of Words: {{ results }}</h3>
+                        <h4>MATCHING WORDS</h4>
+                        {% for result in match %}
                             <li>{{ result }}</li>
-                        {% endfor %} -->
-                    </ul>
+                        {% endfor %}
+                        <h4>FAILING WORDS</h4>
+                        {% for result in fail %}
+                            <li>{{ result }}</li>
+                        {% endfor %}
+
 
               </div><!--col-sm-6-->
           </div><!--row-->
       </div>  <!-- /Container  -->
+
+
+
+
+
+
+
 
 
 
